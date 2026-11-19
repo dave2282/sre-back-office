@@ -1,0 +1,41 @@
+{
+  "name": "TransactionCategory",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Category name"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "income",
+        "expense"
+      ],
+      "default": "income",
+      "description": "Whether this is an income or expense category"
+    },
+    "parent_id": {
+      "type": "string",
+      "description": "Parent category ID for sub-categories (optional)"
+    },
+    "color": {
+      "type": "string",
+      "description": "Optional color hex for badge display",
+      "default": "#6b7280"
+    },
+    "sort_order": {
+      "type": "number",
+      "description": "Sort order for custom arrangement",
+      "default": 0
+    },
+    "active": {
+      "type": "boolean",
+      "description": "Whether the category is active and visible in dropdowns",
+      "default": true
+    }
+  },
+  "required": [
+    "name"
+  ]
+}

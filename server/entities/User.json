@@ -1,0 +1,27 @@
+{
+  "name": "User",
+  "type": "object",
+  "properties": {
+    "role": {
+      "type": "string",
+      "enum": [
+        "admin",
+        "staff",
+        "agent",
+        "user"
+      ],
+      "default": "agent"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "suspended",
+        "inactive"
+      ],
+      "default": "active",
+      "description": "Account status \u2014 suspended/inactive users are blocked from the platform"
+    }
+  },
+  "required": []
+}

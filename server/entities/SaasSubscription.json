@@ -1,0 +1,79 @@
+{
+  "name": "SaasSubscription",
+  "type": "object",
+  "properties": {
+    "customer_id": {
+      "type": "string",
+      "description": "SaasCustomer ID"
+    },
+    "plan": {
+      "type": "string",
+      "enum": [
+        "starter",
+        "growth",
+        "enterprise"
+      ],
+      "default": "starter"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "trialing",
+        "active",
+        "past_due",
+        "cancelled",
+        "paused"
+      ],
+      "default": "trialing"
+    },
+    "base_fee": {
+      "type": "number",
+      "default": 149
+    },
+    "included_users": {
+      "type": "number",
+      "default": 10
+    },
+    "per_user_fee": {
+      "type": "number",
+      "default": 8
+    },
+    "current_user_count": {
+      "type": "number",
+      "default": 0
+    },
+    "monthly_total": {
+      "type": "number",
+      "default": 0
+    },
+    "billing_cycle_start": {
+      "type": "string",
+      "format": "date"
+    },
+    "billing_cycle_end": {
+      "type": "string",
+      "format": "date"
+    },
+    "next_billing_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "trial_end_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "stripe_subscription_id": {
+      "type": "string"
+    },
+    "enterprise_custom_fee": {
+      "type": "number"
+    },
+    "enterprise_notes": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "customer_id",
+    "plan"
+  ]
+}

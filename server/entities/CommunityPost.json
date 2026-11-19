@@ -1,0 +1,92 @@
+{
+  "name": "CommunityPost",
+  "type": "object",
+  "properties": {
+    "author_name": {
+      "type": "string"
+    },
+    "author_email": {
+      "type": "string"
+    },
+    "content": {
+      "type": "string"
+    },
+    "pinned": {
+      "type": "boolean",
+      "default": false
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "general",
+        "announcement",
+        "tip",
+        "question"
+      ],
+      "default": "general"
+    },
+    "media_urls": {
+      "type": "array",
+      "description": "List of uploaded image or video URLs",
+      "items": {
+        "type": "object",
+        "properties": {
+          "url": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          }
+        }
+      },
+      "default": []
+    },
+    "reactions": {
+      "type": "array",
+      "description": "Emoji reactions on the post",
+      "items": {
+        "type": "object",
+        "properties": {
+          "emoji": {
+            "type": "string"
+          },
+          "user_emails": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "default": []
+    },
+    "comments": {
+      "type": "array",
+      "description": "Comments on the post",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "author_name": {
+            "type": "string"
+          },
+          "author_email": {
+            "type": "string"
+          },
+          "content": {
+            "type": "string"
+          },
+          "created_date": {
+            "type": "string"
+          }
+        }
+      },
+      "default": []
+    }
+  },
+  "required": [
+    "content"
+  ]
+}

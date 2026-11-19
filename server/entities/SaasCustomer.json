@@ -1,0 +1,84 @@
+{
+  "name": "SaasCustomer",
+  "type": "object",
+  "properties": {
+    "brokerage_name": {
+      "type": "string",
+      "description": "Customer's brokerage name"
+    },
+    "contact_name": {
+      "type": "string"
+    },
+    "contact_email": {
+      "type": "string"
+    },
+    "contact_phone": {
+      "type": "string"
+    },
+    "company_logo_url": {
+      "type": "string"
+    },
+    "primary_color": {
+      "type": "string",
+      "default": "#1e3a5f"
+    },
+    "secondary_color": {
+      "type": "string",
+      "default": "#c9a84c"
+    },
+    "address": {
+      "type": "string"
+    },
+    "website": {
+      "type": "string"
+    },
+    "state_of_operation": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "active",
+        "suspended",
+        "cancelled"
+      ],
+      "default": "pending"
+    },
+    "onboarding_completed": {
+      "type": "boolean",
+      "default": false
+    },
+    "do_not_charge": {
+      "type": "boolean",
+      "default": false,
+      "description": "If true, this customer is exempt from billing charges"
+    },
+    "notes": {
+      "type": "string"
+    },
+    "stripe_customer_id": {
+      "type": "string"
+    },
+    "instance_id": {
+      "type": "string",
+      "description": "Unique identifier for their app instance"
+    },
+    "instance_url": {
+      "type": "string",
+      "description": "Full URL of their brokerage platform app"
+    },
+    "agent_emails": {
+      "type": "array",
+      "description": "List of agent email addresses that belong to this brokerage",
+      "items": {
+        "type": "string"
+      },
+      "default": []
+    }
+  },
+  "required": [
+    "brokerage_name",
+    "contact_email"
+  ]
+}

@@ -1,0 +1,239 @@
+{
+  "name": "BrokerageSettings",
+  "type": "object",
+  "properties": {
+    "brokerage_name": {
+      "type": "string",
+      "default": "Signature Real Estate"
+    },
+    "logo_url": {
+      "type": "string",
+      "description": "URL of uploaded brokerage logo"
+    },
+    "signature_url": {
+      "type": "string",
+      "description": "URL of uploaded admin/broker signature image for CDA PDFs"
+    },
+    "cda_template_url": {
+      "type": "string",
+      "description": "URL of the office CDA import template file (CSV/Excel) downloaded by agents"
+    },
+    "primary_color": {
+      "type": "string",
+      "description": "Hex color code for primary brand color",
+      "default": "#1e3a5f"
+    },
+    "secondary_color": {
+      "type": "string",
+      "description": "Hex color code for secondary/accent color",
+      "default": "#c9a84c"
+    },
+    "sidebar_text_color": {
+      "type": "string",
+      "description": "Hex color code for sidebar text color",
+      "default": "#ffffff"
+    },
+    "address": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "website": {
+      "type": "string"
+    },
+    "state_of_operation": {
+      "type": "string"
+    },
+    "default_commission_percentage": {
+      "type": "number",
+      "description": "Default total commission % used as starting point",
+      "default": 3
+    },
+    "flat_fee_enabled": {
+      "type": "boolean",
+      "description": "Whether to collect a flat fee per transaction",
+      "default": false
+    },
+    "flat_fee_amount": {
+      "type": "number"
+    },
+    "flat_fee_label": {
+      "type": "string",
+      "default": "Transaction Fee"
+    },
+    "last_backup_date": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO timestamp of the last successful data backup"
+    },
+    "email_templates": {
+      "type": "object",
+      "description": "Custom email template overrides keyed by template name (e.g. cda_submitted, cda_approved)",
+      "default": {}
+    },
+    "commission_plans": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "commission",
+              "flat_fee"
+            ]
+          },
+          "agent_split": {
+            "type": "number"
+          },
+          "office_split": {
+            "type": "number"
+          },
+          "flat_fee_amount": {
+            "type": "number"
+          }
+        }
+      },
+      "default": []
+    },
+    "desk_fee_plans": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "amount": {
+            "type": "number"
+          },
+          "frequency": {
+            "type": "string",
+            "enum": [
+              "monthly",
+              "quarterly",
+              "annually"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          }
+        }
+      },
+      "default": []
+    },
+    "teams": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "notes": {
+            "type": "string"
+          }
+        }
+      },
+      "default": []
+    },
+    "lead_agents": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string"
+          },
+          "full_name": {
+            "type": "string"
+          }
+        }
+      },
+      "default": []
+    },
+    "transaction_coordinators": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string"
+          },
+          "full_name": {
+            "type": "string"
+          }
+        }
+      },
+      "default": []
+    },
+    "document_file_types": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "required_docs": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "default": [
+        {
+          "name": "Listing Closing Checklist",
+          "required_docs": []
+        },
+        {
+          "name": "Buyers Closing Checklist",
+          "required_docs": []
+        },
+        {
+          "name": "Terminated Listing Check List",
+          "required_docs": []
+        },
+        {
+          "name": "Terminated Buyer Checklist",
+          "required_docs": []
+        }
+      ]
+    },
+    "agent_document_checklist": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": []
+    },
+    "role_permission_matrix": {
+      "type": "array",
+      "description": "Custom role permission matrix defined by admin",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "permissions": {
+            "type": "object"
+          }
+        }
+      },
+      "default": []
+    }
+  },
+  "required": [
+    "brokerage_name"
+  ]
+}

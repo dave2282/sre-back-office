@@ -1,0 +1,95 @@
+{
+  "name": "Document",
+  "type": "object",
+  "properties": {
+    "agent_email": {
+      "type": "string",
+      "description": "Owner agent email"
+    },
+    "transaction_id": {
+      "type": "string",
+      "description": "Related transaction ID (optional)"
+    },
+    "name": {
+      "type": "string",
+      "description": "Document name/title"
+    },
+    "file_url": {
+      "type": "string",
+      "description": "URL to the uploaded file"
+    },
+    "file_type": {
+      "type": "string",
+      "description": "MIME type or extension"
+    },
+    "doc_section": {
+      "type": "string",
+      "enum": [
+        "transaction",
+        "office"
+      ],
+      "default": "transaction",
+      "description": "Office document or transaction file"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "purchase_agreement",
+        "counter_proposal",
+        "addendum",
+        "commission_agreement",
+        "id_verification",
+        "agent_signup_form",
+        "form_1099",
+        "contractor_agreement",
+        "policy_manual",
+        "office_announcement",
+        "other"
+      ],
+      "default": "other"
+    },
+    "transaction_type": {
+      "type": "string",
+      "enum": [
+        "buyer",
+        "seller",
+        "both"
+      ],
+      "description": "Whether the agent is representing the buyer, seller, or both"
+    },
+    "file_type_name": {
+      "type": "string",
+      "description": "Checklist/file type name from brokerage settings (e.g. Listing Closing Checklist)"
+    },
+    "file_status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "approved",
+        "ai_approved",
+        "rejected",
+        "needs_revision"
+      ],
+      "default": "pending",
+      "description": "Individual document file status"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "in_progress",
+        "under_review",
+        "missing_docs",
+        "completed"
+      ],
+      "default": "in_progress",
+      "description": "Transaction file status"
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "file_url"
+  ]
+}

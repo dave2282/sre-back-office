@@ -1,0 +1,38 @@
+{
+  "name": "AppInstance",
+  "type": "object",
+  "properties": {
+    "app_url": {
+      "type": "string",
+      "description": "Full URL of the cloned app instance"
+    },
+    "label": {
+      "type": "string",
+      "description": "Optional friendly label for this instance"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "available",
+        "assigned"
+      ],
+      "default": "available",
+      "description": "Whether this instance is available for assignment"
+    },
+    "assigned_customer_id": {
+      "type": "string",
+      "description": "SaasCustomer ID this instance was assigned to"
+    },
+    "assigned_customer_name": {
+      "type": "string",
+      "description": "Brokerage name for display purposes"
+    },
+    "assigned_date": {
+      "type": "string",
+      "format": "date"
+    }
+  },
+  "required": [
+    "app_url"
+  ]
+}

@@ -1,0 +1,257 @@
+{
+  "name": "Transaction",
+  "type": "object",
+  "properties": {
+    "agent_name": {
+      "type": "string",
+      "description": "Your Name (agent submitting)"
+    },
+    "agent_email": {
+      "type": "string",
+      "description": "Email of the submitting agent"
+    },
+    "working_with": {
+      "type": "string",
+      "enum": [
+        "Buyer",
+        "Seller",
+        "Both"
+      ],
+      "description": "Working with Buyer, Seller, or Both"
+    },
+    "commission_check_payable_to": {
+      "type": "string",
+      "description": "LLC name or agent name for check payable to"
+    },
+    "agent_mailing_address": {
+      "type": "string",
+      "description": "Mailing address for agent commission check delivery"
+    },
+    "property_address": {
+      "type": "string",
+      "description": "Property Address"
+    },
+    "buyer_name": {
+      "type": "string",
+      "description": "Buyer(s) name"
+    },
+    "seller_name": {
+      "type": "string",
+      "description": "Seller(s) name"
+    },
+    "coop_agent": {
+      "type": "string",
+      "description": "Co-Op Agent on other side"
+    },
+    "closing_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Closing Date"
+    },
+    "title_company_name": {
+      "type": "string",
+      "description": "Closer's Name"
+    },
+    "title_company_phone": {
+      "type": "string",
+      "description": "Closer's Phone"
+    },
+    "title_company_email": {
+      "type": "string",
+      "description": "Closer's Email"
+    },
+    "sale_price": {
+      "type": "number",
+      "description": "Purchase Price"
+    },
+    "commission_flat_fee": {
+      "type": "number",
+      "default": 0,
+      "description": "Commission $ if flat fee"
+    },
+    "commission_percentage": {
+      "type": "number",
+      "description": "Commission % (e.g. 0.028 = 2.8%)"
+    },
+    "total_commission_amount": {
+      "type": "number",
+      "description": "Total Commission Amount (auto-calculated)"
+    },
+    "office_split_percentage": {
+      "type": "number",
+      "description": "Office Split %"
+    },
+    "office_split_flat": {
+      "type": "number",
+      "default": 0,
+      "description": "Office Split $ if flat fee"
+    },
+    "company_gross_commission": {
+      "type": "number",
+      "description": "Office/Company commission amount"
+    },
+    "agent_gross_commission": {
+      "type": "number",
+      "description": "Agent gross commission"
+    },
+    "referral_1_name": {
+      "type": "string",
+      "description": "Referral 1 name"
+    },
+    "referral_1_amount": {
+      "type": "number",
+      "default": 0,
+      "description": "Referral 1 amount $"
+    },
+    "referral_1_mailing_address": {
+      "type": "string",
+      "description": "Referral 1 mailing address for check"
+    },
+    "referral_2_name": {
+      "type": "string",
+      "description": "Referral 2 name"
+    },
+    "referral_2_amount": {
+      "type": "number",
+      "default": 0,
+      "description": "Referral 2 amount $"
+    },
+    "referral_2_mailing_address": {
+      "type": "string",
+      "description": "Referral 2 mailing address for check"
+    },
+    "referral_3_name": {
+      "type": "string",
+      "description": "Referral 3 name"
+    },
+    "referral_3_amount": {
+      "type": "number",
+      "default": 0,
+      "description": "Referral 3 amount $"
+    },
+    "referral_3_mailing_address": {
+      "type": "string",
+      "description": "Referral 3 mailing address for check"
+    },
+    "referral_4_name": {
+      "type": "string",
+      "description": "Referral 4 name"
+    },
+    "referral_4_amount": {
+      "type": "number",
+      "default": 0,
+      "description": "Referral 4 amount $"
+    },
+    "referral_4_mailing_address": {
+      "type": "string",
+      "description": "Referral 4 mailing address for check"
+    },
+    "total_referral_amount": {
+      "type": "number",
+      "default": 0,
+      "description": "Total referral fees"
+    },
+    "admin_fee_payable_to": {
+      "type": "string",
+      "description": "Admin fee payable to"
+    },
+    "admin_fee_amount": {
+      "type": "number",
+      "default": 0,
+      "description": "Admin Fee $"
+    },
+    "client_concession": {
+      "type": "number",
+      "default": 0,
+      "description": "Client's Concession $"
+    },
+    "agent_net_commission": {
+      "type": "number",
+      "description": "Agent net commission after all deductions"
+    },
+    "office_payment_received": {
+      "type": "boolean",
+      "default": false,
+      "description": "Whether the office has received its commission payment"
+    },
+    "file_type_name": {
+      "type": "string",
+      "description": "Checklist/file type name (e.g. Listing Closing Checklist) \u2014 required before CDA approval"
+    },
+    "category": {
+      "type": "string",
+      "description": "Transaction category (from user-defined list)"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "draft",
+        "submitted",
+        "correction_needed",
+        "approved",
+        "paid"
+      ],
+      "default": "submitted",
+      "description": "CDA workflow status"
+    },
+    "doc_vault_status": {
+      "type": "string",
+      "enum": [
+        "in_progress",
+        "under_review",
+        "missing_docs",
+        "completed"
+      ],
+      "default": "in_progress",
+      "description": "Document vault file status \u2014 tracks whether the agent's document file is complete (set independently of CDA status)"
+    },
+    "correction_notes": {
+      "type": "string",
+      "description": "Admin notes when correction is needed"
+    },
+    "notes": {
+      "type": "string",
+      "description": "General notes"
+    },
+    "approved_by": {
+      "type": "string",
+      "description": "Email of admin who approved"
+    },
+    "approved_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "paid_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "latest_cda_pdf_url": {
+      "type": "string",
+      "description": "URL of the latest auto-generated CDA PDF (regenerated on each approved update)"
+    },
+    "purchase_agreement_url": {
+      "type": "string",
+      "description": "URL of uploaded purchase agreement"
+    },
+    "additional_docs": {
+      "type": "array",
+      "description": "Additional document URLs",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  "required": [
+    "agent_name",
+    "property_address",
+    "sale_price"
+  ]
+}

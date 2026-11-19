@@ -1,0 +1,58 @@
+{
+  "name": "CustomerAddon",
+  "type": "object",
+  "properties": {
+    "customer_id": {
+      "type": "string",
+      "description": "SaasCustomer ID"
+    },
+    "product_id": {
+      "type": "string",
+      "description": "SaasProduct ID"
+    },
+    "product_name": {
+      "type": "string",
+      "description": "Snapshot of product name at time of purchase"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "cancelled",
+        "past_due",
+        "trialing"
+      ],
+      "default": "active"
+    },
+    "price_at_purchase": {
+      "type": "number"
+    },
+    "billing_cycle": {
+      "type": "string",
+      "enum": [
+        "monthly",
+        "annual"
+      ],
+      "default": "monthly"
+    },
+    "activated_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "cancelled_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "stripe_subscription_id": {
+      "type": "string"
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "customer_id",
+    "product_id",
+    "product_name"
+  ]
+}

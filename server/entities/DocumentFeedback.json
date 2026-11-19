@@ -1,0 +1,40 @@
+{
+  "name": "DocumentFeedback",
+  "type": "object",
+  "properties": {
+    "document_name": {
+      "type": "string",
+      "description": "Name of the document"
+    },
+    "document_category": {
+      "type": "string",
+      "description": "The category the document was approved/categorized into"
+    },
+    "checklist_item": {
+      "type": "string",
+      "description": "The required checklist item this document matches"
+    },
+    "file_type_name": {
+      "type": "string",
+      "description": "The file type/checklist this feedback belongs to"
+    },
+    "action": {
+      "type": "string",
+      "enum": [
+        "approved",
+        "categorized",
+        "rejected"
+      ],
+      "description": "Type of admin action"
+    },
+    "approved_by": {
+      "type": "string",
+      "description": "Email of admin who performed the action"
+    }
+  },
+  "required": [
+    "document_name",
+    "document_category",
+    "action"
+  ]
+}

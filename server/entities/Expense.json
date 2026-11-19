@@ -1,0 +1,59 @@
+{
+  "name": "Expense",
+  "type": "object",
+  "properties": {
+    "description": {
+      "type": "string",
+      "description": "Expense description / vendor name"
+    },
+    "expense_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Date of the expense"
+    },
+    "amount": {
+      "type": "number",
+      "description": "Expense amount in dollars"
+    },
+    "category": {
+      "type": "string",
+      "description": "Expense category"
+    },
+    "paid_by": {
+      "type": "string",
+      "description": "Who paid the expense"
+    },
+    "payment_method": {
+      "type": "string",
+      "enum": [
+        "check",
+        "credit_card",
+        "bank_transfer",
+        "cash",
+        "other"
+      ],
+      "default": "other",
+      "description": "Payment method used"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "paid"
+      ],
+      "default": "pending",
+      "description": "Payment status"
+    },
+    "notes": {
+      "type": "string"
+    },
+    "receipt_url": {
+      "type": "string",
+      "description": "URL of uploaded receipt"
+    }
+  },
+  "required": [
+    "description",
+    "amount"
+  ]
+}

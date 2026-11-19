@@ -1,0 +1,26 @@
+{
+  "name": "Vendor",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Vendor / company name"
+    },
+    "category": {
+      "type": "string",
+      "description": "Default expense category for this vendor"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Optional notes about this vendor"
+    },
+    "active": {
+      "type": "boolean",
+      "default": true,
+      "description": "Whether this vendor is active"
+    }
+  },
+  "required": [
+    "name"
+  ]
+}

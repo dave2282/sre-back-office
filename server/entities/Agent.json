@@ -1,0 +1,119 @@
+{
+  "name": "Agent",
+  "type": "object",
+  "properties": {
+    "user_email": {
+      "type": "string",
+      "description": "Links to the User entity email"
+    },
+    "full_name": {
+      "type": "string",
+      "description": "Agent full name"
+    },
+    "company": {
+      "type": "string",
+      "description": "Primary agent company name / LLC"
+    },
+    "companies": {
+      "type": "array",
+      "description": "All LLC / company name variations for this agent (used for referral/split matching)",
+      "items": {
+        "type": "string"
+      },
+      "default": []
+    },
+    "phone": {
+      "type": "string",
+      "description": "Agent phone number"
+    },
+    "mailing_address": {
+      "type": "string",
+      "description": "Agent mailing address for commission check delivery (e.g. 123 Main St, Denver CO 80201)"
+    },
+    "license_number": {
+      "type": "string",
+      "description": "Real estate license number"
+    },
+    "license_expiration": {
+      "type": "string",
+      "format": "date",
+      "description": "License expiration date"
+    },
+    "role": {
+      "type": "string",
+      "description": "Agent role/permission level (e.g. agent, manager, admin, outside tc)",
+      "default": "agent"
+    },
+    "lead_agent": {
+      "type": "string",
+      "description": "Agent email if this agent is a lead agent (reference to User)"
+    },
+    "transaction_coordinators": {
+      "type": "array",
+      "description": "List of transaction coordinator emails assigned to this agent",
+      "items": {
+        "type": "string"
+      },
+      "default": []
+    },
+    "team": {
+      "type": "string",
+      "description": "Team name this agent belongs to"
+    },
+    "desk_fee_plan": {
+      "type": "string",
+      "description": "Office desk fee plan assigned to this agent"
+    },
+    "commission_plan": {
+      "type": "string",
+      "description": "Commission plan name or description (e.g. 70/30, Flat Fee, 100% Plan)"
+    },
+    "annual_cap_amount": {
+      "type": "number",
+      "description": "Annual cap amount in dollars",
+      "default": 0
+    },
+    "ytd_commission_paid": {
+      "type": "number",
+      "description": "Year-to-date commission paid to company",
+      "default": 0
+    },
+    "cap_status": {
+      "type": "string",
+      "enum": [
+        "none",
+        "pre_cap",
+        "post_cap"
+      ],
+      "default": "none",
+      "description": "Whether agent has hit their annual cap"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "inactive",
+        "pending"
+      ],
+      "default": "active",
+      "description": "Agent status"
+    },
+    "join_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Date agent joined brokerage"
+    },
+    "photo_url": {
+      "type": "string",
+      "description": "Agent profile photo URL"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Admin notes about this agent"
+    }
+  },
+  "required": [
+    "full_name",
+    "user_email"
+  ]
+}

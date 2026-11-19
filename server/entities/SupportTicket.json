@@ -1,0 +1,69 @@
+{
+  "name": "SupportTicket",
+  "type": "object",
+  "properties": {
+    "submitted_by_email": {
+      "type": "string"
+    },
+    "submitted_by_name": {
+      "type": "string"
+    },
+    "brokerage_name": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string",
+      "description": "Short summary of the issue"
+    },
+    "description": {
+      "type": "string",
+      "description": "Detailed description of the bug or issue"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "bug",
+        "feature_request",
+        "billing",
+        "account",
+        "other"
+      ],
+      "default": "bug"
+    },
+    "priority": {
+      "type": "string",
+      "enum": [
+        "low",
+        "medium",
+        "high",
+        "critical"
+      ],
+      "default": "medium"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "open",
+        "in_progress",
+        "resolved",
+        "closed"
+      ],
+      "default": "open"
+    },
+    "admin_response": {
+      "type": "string",
+      "description": "Response from SaaS admin"
+    },
+    "resolved_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "screenshot_url": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "title",
+    "description"
+  ]
+}

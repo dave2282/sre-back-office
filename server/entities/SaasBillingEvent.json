@@ -1,0 +1,41 @@
+{
+  "name": "SaasBillingEvent",
+  "type": "object",
+  "properties": {
+    "customer_id": {
+      "type": "string"
+    },
+    "subscription_id": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "payment_succeeded",
+        "payment_failed",
+        "plan_changed",
+        "trial_started",
+        "subscription_cancelled",
+        "refund"
+      ],
+      "default": "payment_succeeded"
+    },
+    "amount": {
+      "type": "number"
+    },
+    "description": {
+      "type": "string"
+    },
+    "stripe_invoice_id": {
+      "type": "string"
+    },
+    "event_date": {
+      "type": "string",
+      "format": "date"
+    }
+  },
+  "required": [
+    "customer_id",
+    "type"
+  ]
+}

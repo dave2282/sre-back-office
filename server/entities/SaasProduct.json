@@ -1,0 +1,89 @@
+{
+  "name": "SaasProduct",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Product name"
+    },
+    "tagline": {
+      "type": "string",
+      "description": "Short one-line description shown on the card"
+    },
+    "description": {
+      "type": "string",
+      "description": "Full product description"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "core",
+        "analytics",
+        "integrations",
+        "marketing",
+        "compliance",
+        "finance",
+        "productivity"
+      ],
+      "default": "productivity"
+    },
+    "price_monthly": {
+      "type": "number",
+      "description": "Monthly add-on price in dollars"
+    },
+    "price_annual": {
+      "type": "number",
+      "description": "Annual add-on price (optional discounted rate)"
+    },
+    "pricing_model": {
+      "type": "string",
+      "enum": [
+        "flat",
+        "per_user",
+        "usage",
+        "custom"
+      ],
+      "default": "flat"
+    },
+    "per_unit_label": {
+      "type": "string",
+      "description": "e.g. 'per agent', 'per 1,000 emails'"
+    },
+    "icon_name": {
+      "type": "string",
+      "description": "Lucide icon name for display"
+    },
+    "color": {
+      "type": "string",
+      "default": "#3b82f6"
+    },
+    "features": {
+      "type": "array",
+      "description": "List of feature bullet points",
+      "items": {
+        "type": "string"
+      }
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "coming_soon",
+        "beta",
+        "deprecated"
+      ],
+      "default": "active"
+    },
+    "sort_order": {
+      "type": "number",
+      "default": 0
+    },
+    "stripe_price_id": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "price_monthly"
+  ]
+}

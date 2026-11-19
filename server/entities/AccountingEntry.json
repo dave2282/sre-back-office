@@ -1,0 +1,82 @@
+{
+  "name": "AccountingEntry",
+  "type": "object",
+  "properties": {
+    "transaction_id": {
+      "type": "string",
+      "description": "Linked Transaction ID"
+    },
+    "agent_name": {
+      "type": "string"
+    },
+    "agent_email": {
+      "type": "string"
+    },
+    "property_address": {
+      "type": "string"
+    },
+    "closing_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "sale_price": {
+      "type": "number"
+    },
+    "total_commission_amount": {
+      "type": "number"
+    },
+    "agent_gross_commission": {
+      "type": "number"
+    },
+    "company_gross_commission": {
+      "type": "number"
+    },
+    "referral_fee_amount": {
+      "type": "number",
+      "default": 0
+    },
+    "agent_net_commission": {
+      "type": "number"
+    },
+    "transaction_type": {
+      "type": "string"
+    },
+    "category": {
+      "type": "string",
+      "description": "Income category (from user-defined list)"
+    },
+    "office_payment_received": {
+      "type": "boolean",
+      "default": false,
+      "description": "Whether the office has received its commission payment"
+    },
+    "office_paid_date": {
+      "type": "string",
+      "format": "date",
+      "description": "Date when office payment was received"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "approved",
+        "paid"
+      ],
+      "default": "pending"
+    },
+    "notes": {
+      "type": "string"
+    },
+    "recurring_id": {
+      "type": "string",
+      "description": "Groups entries that belong to the same recurring series"
+    },
+    "recurring_label": {
+      "type": "string",
+      "description": "Human-readable label for the recurring series"
+    }
+  },
+  "required": [
+    "property_address"
+  ]
+}

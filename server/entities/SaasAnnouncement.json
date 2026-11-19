@@ -1,0 +1,34 @@
+{
+  "name": "SaasAnnouncement",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string"
+    },
+    "body": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "feature",
+        "maintenance",
+        "update",
+        "alert"
+      ],
+      "default": "update"
+    },
+    "published": {
+      "type": "boolean",
+      "default": false
+    },
+    "publish_date": {
+      "type": "string",
+      "format": "date"
+    }
+  },
+  "required": [
+    "title",
+    "body"
+  ]
+}
