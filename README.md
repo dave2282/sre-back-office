@@ -16,7 +16,7 @@ This is a self-hosted rebuild of the **SRE AI Back Office** app that was origina
 
 ## 1. Run it on your computer (for a test drive)
 
-You need **Node.js 20 or newer** (`node -v`).
+You need **Node.js 22 or newer** (`node -v`).
 
 > **Windows:** run the commands below in **Command Prompt** (search "cmd" in the Start menu), not PowerShell. PowerShell blocks npm by default ("running scripts is disabled") and can drop the `--` in `npm run create-admin -- …`.
 
